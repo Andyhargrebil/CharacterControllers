@@ -10,6 +10,9 @@ public class FirstPersonControls : MonoBehaviour
     public float maxArc = 30f;
 
     public Transform eyes;
+    public Transform player;
+    public Transform anchor;
+
     // Use this for initialization
     void Start()
     {
@@ -23,6 +26,7 @@ public class FirstPersonControls : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
+        float mouseW = Input.GetAxis("Mouse ScrollWheel");
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -44,13 +48,20 @@ public class FirstPersonControls : MonoBehaviour
             moveDirection += transform.right;
         }
 
+        moveDirection.y = 0;
+
+        if (moveDirection != Vector3.zero)
+        {
+            player.forward = moveDirection;
+        }
+
         if (mouseX > 0)
         {
-            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+            anchor.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
         }
         if (mouseX < 0)
         {
-            transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+            anchor.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime, Space.World);
         }
 
         float adjustedEuler = eyes.eulerAngles.x;
@@ -59,15 +70,26 @@ public class FirstPersonControls : MonoBehaviour
             adjustedEuler -= 360;
         }
 
-        if (mouseY > 0 && adjustedEuler > -maxArc)
+        if (mouseY > 0 && adjustedEuler > 5)
         {
-            eyes.Rotate(Vector3.right, -rotationSpeed * Time.deltaTime);      
+            anchor.Rotate(Vector3.right, -rotationSpeed * Time.deltaTime);
         }
-        if (mouseY < 0 && adjustedEuler < maxArc)
+        if (mouseY < 0 && adjustedEuler < 65)
         {
-            eyes.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);           
+            anchor.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
         }
 
-    transform.position += moveDirection.normalized* speed * Time.deltaTime;
+        if (mouseW > 0)
+        {
+            eyes.position += eyes.forward;
+        }
+
+        if (mouseW < 0)
+        {
+            eyes.position -= eyes.forward;
+        }
+
+        player.position += moveDirection.normalized* speed * Time.deltaTime;
+        transform.position = player.position;
     }
 }
