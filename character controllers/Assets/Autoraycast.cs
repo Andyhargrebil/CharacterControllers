@@ -14,10 +14,7 @@ public class Autoraycast : MonoBehaviour {
     public float rayDistance = 3.0f;
 
     private bool hitThisFrame = false;
-    private Vector3 rayCollisionNormal;
-    private Vector3 hitLocationThisFrame = Vector3.zero;
     private float dist;
-
 
 	// Use this for initialization
 	void Start () {
