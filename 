@@ -1,0 +1,41 @@
+[33mcommit c70d0b83446e0c04b29d3054ec0d63b763b46f75[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Andyhargrebil <Andyhargrebil@everestkc.net>
+Date:   Sun Feb 18 08:04:45 2018 -0600
+
+    This should work now
+
+[33mcommit adfffb5324ff08a922b609d3000bb6e7fe77e71b[m
+Author: Andyhargrebil <Andyhargrebil@everestkc.net>
+Date:   Sun Feb 18 08:02:15 2018 -0600
+
+    This should work
+
+[33mcommit 1bc680f6a2a462c31e3b90133dd94ad210e13de1[m
+Author: svc-student <svc-student@student.directory.jccc>
+Date:   Wed Feb 14 17:21:10 2018 -0600
+
+    this should be enough to work at home
+
+[33mcommit 43d0857db316a39f7950636545b1269deab91496[m
+Author: svc-student <svc-student@student.directory.jccc>
+Date:   Mon Feb 12 17:38:05 2018 -0600
+
+    raytracing
+
+[33mcommit 77dffef2109fbb30a24a72c8e6a50d7be0db55ca[m
+Author: svc-student <svc-student@student.directory.jccc>
+Date:   Wed Feb 7 17:38:07 2018 -0600
+
+    added gravity
+
+[33mcommit 21dd8a4a2bf60b4d73fbb41fa2c0fbb4809460fa[m
+Author: svc-student <svc-student@student.directory.jccc>
+Date:   Wed Jan 31 17:38:30 2018 -0600
+
+    third person controls
+
+[33mcommit d2119f3d105ba56e6a0640a7f7dc6628428a5b06[m
+Author: Andrew Billiard <Abilliar@stumail.jccc.edu>
+Date:   Mon Jan 29 17:39:22 2018 -0600
+
+    First Person Controller
