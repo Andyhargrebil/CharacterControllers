@@ -13,7 +13,6 @@ public class Autoraycast : MonoBehaviour {
 
     public float rayDistance = 3.0f;
 
-    private bool hitThisFrame = false;
     private float dist;
 
 	// Use this for initialization
@@ -23,7 +22,6 @@ public class Autoraycast : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        hitThisFrame = false;
 
         Vector3 moveDirection = Vector3.zero;
 
