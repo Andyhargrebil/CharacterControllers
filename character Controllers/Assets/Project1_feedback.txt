@@ -1,0 +1,11 @@
+Overall grade: 89/100
+
+All features successfully implemented:
+- Third person control
+- Ramp walking and falling
+- Level walls
+- Projectiles fire when left mouse is clicked
+- Targets destroyed when hit
+- Final pickup item appears and works correctly
+
+No additional innovation detected; maximum grade possible is 89.
