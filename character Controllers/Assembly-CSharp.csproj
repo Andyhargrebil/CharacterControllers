@@ -49,6 +49,7 @@
      <Compile Include="Assets\Autoraycast.cs" />
      <Compile Include="Assets\BasicRotate.cs" />
      <Compile Include="Assets\Bulletmove.cs" />
+     <Compile Include="Assets\FacePlayer.cs" />
      <Compile Include="Assets\FirstPersonControls.cs" />
      <Compile Include="Assets\MouseInputDebug.cs" />
      <Compile Include="Assets\movetoMouse.cs" />

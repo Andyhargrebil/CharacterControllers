@@ -9,7 +9,7 @@ public class movetoMouse : MonoBehaviour {
     private Vector3 whereClick;
 
     // Use this for initialization
-    void Start () {
+  void Start () {
         whereClick = transform.position;
 	}
 	
