@@ -6,7 +6,6 @@ public class FacePlayer : MonoBehaviour {
 
   public LayerMask floorOnly;
   public Transform player;
-  Vector3 moveDirection = Vector3.zero;
 
   // Use this for initialization
   void Start () {
@@ -16,10 +15,13 @@ public class FacePlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-    if (Physics.Raycast(transform.position, player.position - transform.position))
+    RaycastHit hitInfo;
+    if (Physics.Raycast(transform.position, player.position - transform.position, out hitInfo, floorOnly))
     {
-      moveDirection = player.position - transform.position;
-      transform.forward = moveDirection;
+      if(hitInfo.transform.gameObject.tag == "Player")
+      {
+        transform.forward = player.position - transform.position;
+      }
     }
   }
 }

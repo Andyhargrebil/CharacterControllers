@@ -34,6 +34,9 @@ public class FirstPersonControls : MonoBehaviour
 
     needtoshoot = GameObject.FindGameObjectsWithTag("NeedtoDestroy");
 
+    GameObject.Find("Propellor A").GetComponent<BasicRotate>().rotationSpeed = 360;
+    GameObject.Find("Propellor B").GetComponent<BasicRotate>().rotationSpeed = 360;
+
     float mouseX = Input.GetAxis("Mouse X");
     float mouseY = Input.GetAxis("Mouse Y");
     float mouseW = Input.GetAxis("Mouse ScrollWheel");
@@ -41,11 +44,15 @@ public class FirstPersonControls : MonoBehaviour
     if (Input.GetKey(KeyCode.W) && canMove == true)
     {
       moveDirection += transform.forward;
+      GameObject.Find("Propellor A").GetComponent<BasicRotate>().rotationSpeed = 540;
+      GameObject.Find("Propellor B").GetComponent<BasicRotate>().rotationSpeed = 540;
     }
 
     if (Input.GetKey(KeyCode.S) && canMove == true)
     {
       moveDirection += -transform.forward;
+      GameObject.Find("Propellor A").GetComponent<BasicRotate>().rotationSpeed = 180;
+      GameObject.Find("Propellor B").GetComponent<BasicRotate>().rotationSpeed = 180;
     }
 
     if (Input.GetKey(KeyCode.A) && canMove == true)
@@ -59,11 +66,6 @@ public class FirstPersonControls : MonoBehaviour
     }
 
     moveDirection.y = 0;
-
-    if (moveDirection != Vector3.zero)
-    {
-      //player.forward = moveDirection;
-    }
 
     if (mouseX > 0 && canMove == true)
     {
