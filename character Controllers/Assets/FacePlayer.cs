@@ -6,6 +6,7 @@ public class FacePlayer : MonoBehaviour {
 
   public LayerMask floorOnly;
   public Transform player;
+  public GameObject ammo;
 
   // Use this for initialization
   void Start () {
@@ -21,6 +22,7 @@ public class FacePlayer : MonoBehaviour {
       if(hitInfo.transform.gameObject.tag == "Player")
       {
         transform.forward = player.position - transform.position;
+        Instantiate(ammo, transform.position, transform.rotation);
       }
     }
   }

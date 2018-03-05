@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bulletmove : MonoBehaviour {
 
 	public float speed = 5.0f;
+  public AudioClip boom;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class Bulletmove : MonoBehaviour {
 		Destroy (gameObject);
 		if (hits.gameObject.tag == "NeedtoDestroy") {
 			Destroy (hits.gameObject);
+      AudioSource.PlayClipAtPoint(boom, transform.position);
 		}
 	}
 }

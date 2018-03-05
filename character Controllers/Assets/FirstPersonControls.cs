@@ -8,6 +8,7 @@ public class FirstPersonControls : MonoBehaviour
   public float speed = 4.0f;
   public float motionScale = 10f;
   public float maxArc = 30f;
+  public int health = 5;
 
   public Transform eyes;
   public Transform player;
@@ -111,6 +112,13 @@ public class FirstPersonControls : MonoBehaviour
     if (needtoshoot.Length == 0)
     {
       goal.SetActive(true);
+    }
+
+    if (health <= 0)
+    {
+      GameObject.Find("Propellor A").GetComponent<BasicRotate>().rotationSpeed = 0;
+      GameObject.Find("Propellor B").GetComponent<BasicRotate>().rotationSpeed = 0;
+      canMove = false;
     }
 
     player.position += moveDirection.normalized * speed * Time.deltaTime;

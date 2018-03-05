@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class reachGoal : MonoBehaviour {
 
+  private Animator whatever;
+
 	// Use this for initialization
 	void Start () {
+    whatever = GameObject.Find ("Ethan").GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -15,5 +18,6 @@ public class reachGoal : MonoBehaviour {
 
 	void OnTriggerEnter(Collider hits){
 		GameObject.Find ("Ghost").GetComponent<FirstPersonControls> ().canMove = false;
+    whatever.SetBool("IsMoving", true);
 	}
 }
